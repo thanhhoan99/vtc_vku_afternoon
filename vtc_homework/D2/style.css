@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color, #fff);
+  color: var(--text-color, #000);
+  transition: 0.3s;
+}
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#clock {
+  font-weight: bold;
+  margin-right: 10px;
+}
+button {
+  margin: 5px;
+  padding: 6px 12px;
+}
+input[type="text"] {
+  padding: 6px;
+  width: 250px;
+}
+.filters {
+  margin: 10px 0;
+}
+ul#taskList {
+  list-style: none;
+  padding: 0;
+}
+ul#taskList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f0f0f0;
+  padding: 8px;
+  margin: 5px 0;
+}
+ul#taskList li.completed {
+  background: #c8e6c9;
+  text-decoration: line-through;
+}
+.note {
+  display: inline-block;
+  background: #dcedc8;
+  padding: 10px;
+  margin: 10px 5px 0 0;
+  min-width: 120px;
+  border-radius: 5px;
+  position: relative;
+}
+.note .delete-note {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+}

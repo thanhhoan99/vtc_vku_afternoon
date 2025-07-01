@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do & Notes Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧠 Dashboard</h1>
+      <div class="clock-container">
+        <span id="clock"></span>
+        <span id="greeting"></span>
+      </div>
+      <button id="themeToggle">🌙</button>
+    </header>
+
+    <!-- To-Do Section -->
+    <section>
+      <h2>To-Do List</h2>
+      <input id="taskInput" type="text" placeholder="Enter a task" />
+      <button id="addTaskBtn">Add Task</button>
+      <div class="filters">
+        <label>Filters:</label>
+        <button class="filter" data-filter="all">All</button>
+        <button class="filter" data-filter="completed">Completed</button>
+        <button class="filter" data-filter="incomplete">Incomplete</button>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+
+    <!-- Notes Section -->
+    <section>
+      <h2>Sticky Notes</h2>
+      <input id="noteInput" type="text" placeholder="Write a note..." />
+      <button id="addNoteBtn">Add Note</button>
+      <div id="notesContainer"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

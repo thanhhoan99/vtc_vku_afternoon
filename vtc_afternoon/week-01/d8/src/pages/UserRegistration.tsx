@@ -9,11 +9,11 @@ type FormData = {
   confirmPassword: string;
   phone: string;
   gender: string;
-  dateOfBirth: string;
+  dateOfBirth: Date;
   country: string;
   hobbies: string[];
   profilePic: FileList;
-  bio: string;
+  bio: string | undefined; // ❗ sửa từ `bio?: string` ➝ `string | undefined`
 };
 
 const schema = yup.object({
@@ -35,10 +35,12 @@ const schema = yup.object({
     .required("Date of Birth is required."),
   country: yup.string().required("Please select a country."),
   hobbies: yup.array().min(1, "Select at least one hobby."),
-  profilePic: yup
-    .mixed()
-    .test("required", "Please upload a file", (value) => value && value.length > 0),
-  bio: yup.string().optional(),
+ profilePic: yup
+  .mixed()
+  .test("required", "Please upload a file", (value) => {
+    return value instanceof FileList && value.length > 0;
+  }),
+ bio: yup.string().optional(),
 });
 
 export default function UserRegistration() {

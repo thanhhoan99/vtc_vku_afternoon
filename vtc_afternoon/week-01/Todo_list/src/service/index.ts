@@ -24,6 +24,7 @@ export const getTasks = async () => {
   return response.json();
 };
 
+
 export const getTaskById = async (id: number) => {
   const response = await fetch(`${baseUrl}/workspaces/tasks/${id}`, {
     headers: defaultHeaders,

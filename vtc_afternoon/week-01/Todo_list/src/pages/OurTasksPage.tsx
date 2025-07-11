@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react';
-import AuthContext from '../context';
+import React, {useEffect } from 'react';
 
 import type { Task } from '../types';
 import { useNavigate } from 'react-router';
@@ -9,7 +8,6 @@ import { getTasks } from '../service';
 
 
 export default function OurTasksPage() {
-  const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -29,9 +27,9 @@ export default function OurTasksPage() {
     fetchTasks();
   }, []);
 
-  const handleOnEdit = (taskId: number) => {
+  const handleOnEdit = (id: number) => {
     // Logic to handle task edit
-    navigate(`/update-task/${taskId}`);
+    navigate(`/update-task/${id}`);
   };
 
 
@@ -82,7 +80,9 @@ export default function OurTasksPage() {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{task.assignee_id}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                   <button
-                    onClick={() => handleOnEdit(task.id)}
+                    onClick={() => {if (typeof task.id ==='number'){
+                      handleOnEdit(task.id)
+                    }}}
                     className="text-indigo-600 hover:text-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   >
                     Edit

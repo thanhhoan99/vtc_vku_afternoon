@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router';
 import LoginPage from './pages/LoginPage';
 import OurTasksPage from './pages/OurTasksPage';
@@ -13,7 +13,7 @@ export default function App() {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    // Load user from localStorage if available
+    
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));

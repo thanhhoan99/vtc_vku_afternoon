@@ -96,10 +96,10 @@ export default function UpdateTaskPage() {
     fetchTask();
   }, [id, reset]);
 
-  const onSubmit: SubmitHandler<IFormInput> = async (data: any) => {
+  const onSubmit: SubmitHandler<IFormInput> = async (data :any) => {
     try {
       await updateTask(id ? parseInt(id) : 0, data);
-      navigate('/tasks');
+      navigate(`/tasks`);
     } catch (error) {
       console.error('Error creating task:', error);
       alert('Failed to create task. Please try again.');

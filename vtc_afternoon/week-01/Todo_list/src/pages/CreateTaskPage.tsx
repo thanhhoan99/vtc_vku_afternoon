@@ -68,6 +68,7 @@ export default function CreateTaskPage() {
     mode: 'onChange',
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit: SubmitHandler<IFormInput> = async (data: any) => {
     console.log('Form submitted:', data);
     try {
